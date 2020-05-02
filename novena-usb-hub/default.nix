@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     description = "USB power and overcurrent control for internal and external USB ports on Novena.";
     homepage = https://github.com/xobs/novena-usb-hub/;
     license = stdenv.lib.licenses.bsd3;
-    maintainers = [ stdenv.lib.maintainers.srk ];
+    maintainers = [ stdenv.lib.maintainers.sorki ];
     platforms = stdenv.lib.platforms.linux;
   };
 }

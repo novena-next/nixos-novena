@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
     '';
     homepage = https://github.com/xobs/novena-eeprom/;
     license = stdenv.lib.licenses.bsd3;
-    maintainers = [ stdenv.lib.maintainers.srk ];
+    maintainers = [ stdenv.lib.maintainers.sorki ];
     platforms = stdenv.lib.platforms.linux;
   };
 }
