@@ -5,17 +5,14 @@
 }:
 stdenv.mkDerivation rec {
   pname = "novena-usb-hub";
-  version = "b3de8b9";
+  version = "2b8d8c8";
 
-  /*
   src = fetchFromGitHub {
-    owner = "xobs";
+    owner = "novena-next";
     repo = pname;
     rev = version;
-    sha256 = "00pd71mg0g20v0820ggp3ghf9nyj5s4wavaz9mkmrmsr91hcnf7i";
+    sha256 = "0zf85a3zqxafyh4z0l4jmvkxq7ww2yic63plhw2xmx414y75vfgq";
   };
-  */
-  src = /etc/nixos/novena-usb-hub;
 
   doCheck = false;
   nativeBuildInputs = [ pkgconfig ];
@@ -24,7 +21,7 @@ stdenv.mkDerivation rec {
 
   meta = {
     description = "USB power and overcurrent control for internal and external USB ports on Novena.";
-    homepage = https://github.com/xobs/novena-usb-hub/;
+    homepage = "https://github.com/novena-next/novena-usb-hub/";
     license = stdenv.lib.licenses.bsd3;
     maintainers = [ stdenv.lib.maintainers.sorki ];
     platforms = stdenv.lib.platforms.linux;

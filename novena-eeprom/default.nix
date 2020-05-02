@@ -4,17 +4,14 @@
 }:
 stdenv.mkDerivation rec {
   pname = "novena-eeprom";
-  version = "b3de8b9";
+  version = "19b320b";
 
-  /*
   src = fetchFromGitHub {
-    owner = "xobs";
+    owner = "novena-next";
     repo = pname;
     rev = version;
-    sha256 = "00pd71mg0g20v0820ggp3ghf9nyj5s4wavaz9mkmrmsr91hcnf7i";
+    sha256 = "0ldmpbvcq5qs3km1lcggd6k36x6n4qlr1knwmq69d7inp028iy7d";
   };
-  */
-  src = /etc/nixos/novena-eeprom;
 
   doCheck = false;
   buildInputs = [ linuxHeaders ];
@@ -25,7 +22,7 @@ stdenv.mkDerivation rec {
     longDescription = ''
       Novena boards contain a device-dependent descriptive EEPROM that defines various parameters such as serial number, MAC address, and featureset. This program allows you to view and manipulate this EEPROM list.
     '';
-    homepage = https://github.com/xobs/novena-eeprom/;
+    homepage = "https://github.com/novena-next/novena-eeprom/";
     license = stdenv.lib.licenses.bsd3;
     maintainers = [ stdenv.lib.maintainers.sorki ];
     platforms = stdenv.lib.platforms.linux;
