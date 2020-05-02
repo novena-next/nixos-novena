@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   doCheck = false;
   nativeBuildInputs = [ pkgconfig ];
   buildInputs = [ libusb1 ];
-  makeFlags = [ "DESTDIR=$(out)" ];
+  makeFlags = [ "PREFIX=$(out)" ];
 
   meta = {
     description = "USB power and overcurrent control for internal and external USB ports on Novena.";
