@@ -22,24 +22,15 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnsupportedSystem = true;
-    #platform = pkgs.platforms.raspberrypi2;
     platform = { # imx6q
       name = "novena";
       kernelArch = "arm";
       kernelAutoModules = true;
-      #kernelBaseConfig = "novena_defconfig";
-      #kernelBaseConfig = "imx6q-novena_defconfig";
       kernelBaseConfig = "multi_v7_defconfig";
-      #kernelMajor = "2.6";
       kernelPreferBuiltin = true;
       kernelTarget = "zImage";
       kernelDTB = true;
       gcc = { arch = "armv7-a"; float = "hard"; fpu = "vfpv3-d16"; };
-      #gcc = {
-      #  arch = "armv7-a";
-      #  fpu = "neon";
-      #  #fpu = "vfpv3-d16";
-      #};
       kernelExtraConfig = ''
          REGULATOR_PFUZE100 y
 
