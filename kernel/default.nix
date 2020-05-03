@@ -35,5 +35,22 @@ in
       mkdir -p "$out/nix-support"
       cp -v "$buildRoot/.config" "$out/nix-support/build.config"
     '';
+
+    extraConfig = ''
+      REGULATOR_PFUZE100 y
+
+      DRM_ETNAVIV y
+      DRM_ETNAVIV_THERMAL y
+      DRM_ITE_IT6251 y
+
+      NET_ETHERNET m
+      USB_USBNET m
+      USB_NET_AX8817X m
+      SND_SOC_IMX_ES8328 m
+
+      USB_SERIAL_PL2303 m
+      USB_SERIAL_CH341 m
+    '';
+
   } // (args.argsOverride or {}))
 )
