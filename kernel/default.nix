@@ -28,7 +28,7 @@ in
       owner = "novena-next";
       repo = "linux";
       rev = "nvn_v5.7-rc2";
-      sha256 = "0hhgw5lb3zzyvxry1zk68367bza6k6d9jq5af5mjmjizw8bd9zdm";
+      sha256 = "0fyfk3z0ny42bzrajs6khcgx1zq39p6gd6fh54g04r3vbv4jzf0m";
     };
 
     postInstall = (optionalString (args ? postInstall) args.postInstall) + ''
