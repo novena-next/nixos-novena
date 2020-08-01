@@ -18,6 +18,8 @@ in
 (
   buildLinux (args // rec {
     version = "5.7.0-rc2";
+
+    ignoreConfigErrors = true;
     #version = "5.6.0-rc1-next-20200214";
 
     # branchVersion needs to be x.y
