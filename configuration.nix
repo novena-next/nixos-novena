@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, modulesPath, ... }:
 
 {
   nixpkgs.overlays = [
@@ -7,7 +7,8 @@
   ];
 
   imports = [
-    <nixpkgs/nixos/modules/installer/cd-dvd/sd-image.nix>
+    #<nixpkgs/nixos/modules/installer/cd-dvd/sd-image.nix>
+    "${modulesPath}/installer/cd-dvd/sd-image.nix"
   ];
 
   boot.loader.grub.enable = false;
@@ -39,7 +40,7 @@
   sdImage =
   let
     extlinux-conf-builder =
-      import <nixpkgs/nixos/modules/system/boot/loader/generic-extlinux-compatible/extlinux-conf-builder.nix> {
+      import "${modulesPath}/system/boot/loader/generic-extlinux-compatible/extlinux-conf-builder.nix" {
         pkgs = pkgs.buildPackages;
       };
   in

@@ -9,7 +9,7 @@ in
 
     linux_nvn = callPackage ./kernel {
       # with final.lib.kernel?
-      structuredExtraConfig = with import <nixpkgs/lib/kernel.nix> { inherit (super) lib; }; {
+      structuredExtraConfig = with final.lib.kernel; {
         DRM_ETNAVIV = module;
         DRM_ETNAVIV_THERMAL = yes;
         DRM_ITE_IT6251 = module;
