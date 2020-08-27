@@ -51,7 +51,7 @@
     imageBaseName = "nixos-novena-sd-image";
 
     populateFirmwareCommands = ''
-        cp ${pkgs.pkgsCross.armv7l-hf-multiplatform.ubootNovena}/u-boot.bin u-boot.bin
+        cp ${pkgs.pkgsCross.armv7l-hf-multiplatform.ubootNovena}/u-boot-dtb.img firmware/u-boot-dtb.img
       '';
     populateRootCommands = ''
         mkdir -p ./files/boot
