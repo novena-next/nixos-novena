@@ -57,6 +57,10 @@
         mkdir -p ./files/boot
         ${extlinux-conf-builder} -t 3 -c ${config.system.build.toplevel} -d ./files/boot
       '';
+
+    postBuildCommands = ''
+      dd if=${pkgs.pkgsCross.armv7l-hf-multiplatform.ubootNovena}/SPL of=$img bs=1024 seek=1 conv=notrunc
+    '';
   };
 
 }
