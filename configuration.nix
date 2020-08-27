@@ -8,6 +8,7 @@
 
   imports = [
     <nixpkgs/nixos/modules/installer/cd-dvd/sd-image.nix>
+    <nixpkgs/nixos/modules/profiles/installation-device.nix>
   ];
 
   boot.loader.grub.enable = false;
