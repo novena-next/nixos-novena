@@ -2,15 +2,12 @@
 # $ nix-prefetch-url --unpack https://github.com/NixOS/nixpkgs/archive/${REVISION}.tar.gz
 #
 let
-  rev="ecef3f9794bdb59f56193c9084e32bc7367d5e70";
-  hash="03gqhmzky4130avlmj2zzf4zvfxmia67g9y5y91haah654c4v082";
+  rev="770ecb1d3134a7b0e4469eb790836bd837c9f675";
+  hash="0q8kdh5ww9cm28pf9y47q2p4g4q4ipf34zr087vld7zdykjkxi9a";
 in
 import (
   "${fetchTarball {
-    # currently forked due to two patches
-    # https://github.com/NixOS/nixpkgs/pull/96459
-    # https://github.com/NixOS/nixpkgs/pull/96460
-    url = "https://github.com/NixOS/sorki/archive/${rev}.tar.gz";
+    url = "https://github.com/NixOS/nixpkgs/archive/${rev}.tar.gz";
     sha256 = hash;
   }}/nixos"
 )
