@@ -29,3 +29,8 @@ In `configuration.nix`, select the custom kernel with
 ```
 boot.kernelPackages = pkgs.linuxPackages_nvn
 ```
+
+If using cross-compiled installer the initial installation might take several days
+as Nix cannot reuse cross-compiled packages from installers `/nix/store` and
+has to build whole world from scratch including bootstrap packages. Make sure to
+supply additional cooling or limit the compilation to 3 cores with `--option cores 3`.
