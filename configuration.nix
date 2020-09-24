@@ -31,6 +31,7 @@
     #powertop
     #lm_sensors
     novena-usb-hub
+    it6251-dump-dptx
   ];
 
   # minification

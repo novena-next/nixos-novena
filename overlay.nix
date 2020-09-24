@@ -6,6 +6,7 @@ in
   {
     novena-eeprom = callPackage ./novena-eeprom {};
     novena-usb-hub = callPackage ./novena-usb-hub {};
+    it6251-dump-dptx = callPackage ./it6251-dump-dptx {};
 
     linux_nvn = callPackage ./kernel {
       # with final.lib.kernel?
