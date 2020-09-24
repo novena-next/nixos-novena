@@ -30,7 +30,7 @@
     #libgpiod
     #powertop
     #lm_sensors
-    #novena-usb-hub
+    novena-usb-hub
   ];
 
   # minification

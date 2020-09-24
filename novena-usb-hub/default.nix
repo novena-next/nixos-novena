@@ -5,19 +5,21 @@
 }:
 stdenv.mkDerivation rec {
   pname = "novena-usb-hub";
-  version = "2b8d8c8";
+  version = "4b1123a";
 
   src = fetchFromGitHub {
     owner = "novena-next";
     repo = pname;
     rev = version;
-    sha256 = "0zf85a3zqxafyh4z0l4jmvkxq7ww2yic63plhw2xmx414y75vfgq";
+    sha256 = "1gry9pmap2xfx2dh6a0alvs5aaspahifbvkifdxw4pawsakqgnjs";
   };
 
-  doCheck = false;
   nativeBuildInputs = [ pkgconfig ];
-  buildInputs = [ libusb1 ];
-  makeFlags = [ "PREFIX=$(out)" ];
+  buildInputs = [ pkgconfig libusb1 ];
+  makeFlags = [
+    "PREFIX=$(out)"
+    "PKGCONFIG=${pkgconfig}/bin/${pkgconfig.targetPrefix}pkg-config"
+  ];
 
   meta = {
     description = "USB power and overcurrent control for internal and external USB ports on Novena.";
