@@ -2,7 +2,7 @@
 
 {
   nixpkgs.overlays = [
-    (import ./overlay.nix)
+    (import ./overlay.nix modulesPath)
     # (self: super: { mpv = super.mpv.override { sambaSupport = false; }; })
   ];
 

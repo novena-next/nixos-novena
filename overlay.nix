@@ -1,4 +1,4 @@
-final: super:
+modulesPath: final: super:
 
 let
   inherit (final) callPackage kernelPatches linuxPackagesFor;
@@ -10,7 +10,7 @@ in
 
     linux_nvn = callPackage ./kernel {
       # with final.lib.kernel?
-      structuredExtraConfig = with import <nixpkgs/lib/kernel.nix> { inherit (super) lib; }; {
+      structuredExtraConfig = with (import "${modulesPath}/../../lib/kernel.nix" { inherit (super) lib; }); {
         DRM_ETNAVIV = module;
         DRM_ETNAVIV_THERMAL = yes;
         DRM_ITE_IT6251 = module;
