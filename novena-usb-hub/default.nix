@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , pkgconfig
 , libusb1
+, buildPackages
 }:
 stdenv.mkDerivation rec {
   pname = "novena-usb-hub";
@@ -15,10 +16,10 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ pkgconfig ];
-  buildInputs = [ pkgconfig libusb1 ];
+  buildInputs = [ libusb1 ];
   makeFlags = [
     "PREFIX=$(out)"
-    "PKGCONFIG=${pkgconfig}/bin/${pkgconfig.targetPrefix}pkg-config"
+    "PKGCONFIG=${buildPackages.pkgconfig}/bin/${buildPackages.pkgconfig.targetPrefix}pkg-config"
   ];
 
   meta = {
